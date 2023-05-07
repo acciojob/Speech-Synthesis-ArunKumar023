@@ -37,6 +37,35 @@
   const stopButton = document.querySelector('#stop');
 
   //Your code goes here
+
+	const stopButton = document.querySelector('#stop');
+
+  //Your code goes here
+
+	    stopButton.addEventListener("click",()=>{
+            speechSynthesis.cancel(msg);
+    });
+
+  speakButton.addEventListener("click",()=>{
+
+    let textstr = document.querySelector("textarea[name='text']").value;
+    let ratevalue = document.querySelectorAll('input[type="range"], [name="text"]')[0].value;
+    let pitchvalue = document.querySelectorAll('input[type="range"], [name="text"]')[1].value;
+
+    if('speechSynthesis' in window){
+     msg.lang="en";
+     msg.rate=ratevalue;
+     msg.pitch = pitchvalue;
+     msg.text = textstr;
+     speechSynthesis.speak(msg);
+
+   }
+  else{
+    console.log(' Speech Synthesis Not Supported 😞'); 
+  }
+
+  });
+	
 </script>
 
 </body>
