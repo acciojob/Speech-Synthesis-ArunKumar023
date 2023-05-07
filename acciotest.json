@@ -1,0 +1,4 @@
+{
+    "testRepo": "Speech-Synthesis-Solution",
+    "pathToFile": "cypress/integration/tests/test.spec.js"
+}
